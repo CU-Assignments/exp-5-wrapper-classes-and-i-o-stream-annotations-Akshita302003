@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class WrapperClassExample {
+    public static void main(String[] args) {
+        
+        String[] numberStrings = {"10", "20", "30", "40", "50"};
+        
+     
+        List<Integer> numbers = new ArrayList<>();
+        for (String numStr : numberStrings) {
+            numbers.add(Integer.parseInt(numStr)); // Autoboxing
+        }
+      int sum = calculateSum(numbers);
+    System.out.println("Sum of the numbers: " + sum);
+    }
+    
+    public static int calculateSum(List<Integer> numbers) {
+        int sum = 0;
+        for (Integer num : numbers) {
+            sum += num; // Unboxing happens here
+        }
+        return sum;
+    }
+}
